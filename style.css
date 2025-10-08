@@ -1,0 +1,1284 @@
+:root{ 
+      --color-nav: rgba(41, 162, 140, 0.12);
+      --colo-body: rgba(13, 12, 33, 0.65); }
+
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      font-family: "Open sans";
+      list-style: none;
+      border: none;}
+
+img {
+      display: block;}
+
+html {
+      font-size: 16px;
+      scroll-behavior: smooth;}
+
+header{ 
+      position: relative;
+      margin: 0 auto; 
+      background-image: url(https://ucarecdn.com/761233c4-7224-418d-b151-ea7bc1196250/);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      min-height: 758px;
+      width: 100%;}
+
+header::before{
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: rgba(13, 12, 33, 0.65); 
+      backdrop-filter: blur(2px);}
+
+header> * {
+      position: relative;
+      z-index: 2;}
+
+.container{
+      width: 100%;
+      height: 100%;
+      min-height: 758px; /* Минимальная высота header */}
+
+.header__menu{
+      position: relative;
+      display: flex;
+      height:80px;
+      justify-content: space-between;
+      background: var(--color-nav); /* Отступы по бокам */}
+
+.logo-container{
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      height: 50px;
+      padding-top: 27px;
+      padding-left: 75px;
+      gap:25px}
+
+.logo-image{
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: #fff;
+      border-radius: 45px;
+      }      
+
+.logo-text{
+      display: flex;
+      position: relative;
+      align-items: center;
+      font-family: "Open sans";
+      font-weight: bolder;
+      text-transform: uppercase;
+      color: #fff;}
+
+.nav__links{
+      display: flex;
+      align-items: center;
+      min-width: 800px;
+      gap: 50px;
+      margin-left:center; /* Автоматический отступ слева - прижимает вправо */
+      padding-right: 70px; /* Отступ от правого края */
+      transition: all 0.3s ease; /* плавный переход */
+      white-space: nowrap;}
+
+.link a{
+      position: relative;
+      max-width: min-content;
+      justify-content: center;
+      color:#fff;}
+.link a:hover{
+      color:var(--colo-body);}
+
+.dropdown-arrow {
+      margin-left: 8px; /* Отступ от текста */
+      transition: transform 0.3s ease; /* Плавная анимация */}
+
+/* Анимация стрелки при наведении */
+.has-dropdown:hover .dropdown-arrow {
+      transform: rotate(180deg);}
+
+/* Дополнительные стили для выравнивания */
+.has-dropdown > a {
+      display: flex;
+      align-items: center;}
+
+.has-dropdown{
+      position: relative;}
+
+.sub__links{
+      position: absolute;
+      top: 235%;
+      left: 50%;
+      font-size: 16px;
+      transform: translateX(-50%);
+      min-width: max-content;
+      opacity: 0;
+      visibility: visible;
+      transition: all 0.3s ease;
+      background-color: var(--color-nav);
+      z-index: 100;}
+
+.down__link {
+      display: block;
+      padding: 10px 15px;
+      text-align: center;
+      color: white;
+      transition: background 0.2s ease;}
+
+.down__link:hover {
+      background-color: rgba(255, 255, 255, 0.1);}
+
+.has-dropdown:hover .sub__links {
+      opacity: 1;
+      visibility: visible;}
+
+.header__intro{
+      position: relative;
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      padding-top: 7%;}
+
+.header__intro h1{  
+      margin: 0 auto 40px; /* Центрирование + отступ снизу */
+      width: 871.56px;
+      height: 184.4px;
+      text-align: center;
+      font-size: 47px;
+      font-weight: 400;
+      line-height: 64px;
+      font-style: normal;
+      font-family: "Open sans";
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #FFFFFF;
+      opacity: 0.3;}
+
+.button__header{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: 0 auto;
+      bottom: 266.9px;
+      width: 278.41px;
+      height: 46.1px;
+      border: 1px solid #FFFFFF;
+      border-radius: 43px;
+      background: none;
+      color:#fff;
+      cursor: pointer; /* добавляем указатель при наведении */
+      transition: all 0.3s ease; /* плавные переходы для hover-эффекта */}
+
+button{
+      text-align: center;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;}
+
+.button__header:hover{
+      background-color: #fff;
+      color: #000;
+      z-index: 100;}
+
+.arrow-svg {
+      margin: 0 auto;
+      left: 50%;
+      align-items: center;
+      width: 80px; /* Можно регулировать размер */
+      height: auto;
+      animation: bounce 2s infinite;}
+
+.button-arrow-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px; /* Расстояние между кнопкой и стрелкой */}
+
+@keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+      40% {transform: translateY(-10px);}
+      60% {transform: translateY(-5px);}}
+
+.container-number{
+      width: auto;
+      height: 117px;
+      display: flex;
+      align-self: center;
+      justify-content: center;}
+
+.container-number {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin: 100px;
+      padding: 0px;
+      gap: 92px;}
+
+.statistics__line{
+      height: 113px;
+      width: 3px;
+      background: rgba(41, 162, 140, 100);}
+
+.statistics__number{
+font-family: "Open sans";
+font-weight: 60px;
+font-size: 48px;
+text-align: center;
+color: #000000;}
+
+.statistics__text{
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+text-align: center;
+letter-spacing: 0.02em;
+text-transform: lowercase;
+color: #000000;}
+
+
+.guarant{
+display: flex;
+position: relative;
+justify-content: center;
+align-items: center;
+padding-left:82px;
+padding-right: 68px;
+margin: auto;
+width: 100%;
+height: 100%;}
+
+.main__image{
+height: 583px;
+width: auto;}
+
+.guarant__container{
+display: flex;
+flex-direction: column;}
+
+
+.guarant__head{
+display: flex;
+position: relative;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;}
+      
+.guarant__header{
+position: relative;
+display: flex;
+width: 710px;
+height: 154px;
+padding-top: 26px;
+margin-left: 29px;
+align-items: center;
+text-align: center;
+justify-content: center;}
+
+.guarant__header svg:first-child {
+      position: relative;
+      left: 0;
+      bottom: 0;
+      transform: translateY(50%);}
+
+.guarant__header svg:last-child {
+      position: relative;
+      right: 0;
+      top: 0;
+      transform: translateY(-50%);}
+
+h3{
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 54px;
+      letter-spacing: 0.045em;
+      color: #000000;}
+
+.guarant__header h3 {
+      margin: 0 15px; /* Добавляем отступы для кавычек */
+      align-items: center;
+      text-align: center;
+      width: 560px;
+      height: 102px;
+      display: flex;}
+
+.guarant__main{
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      padding-top: 47px;
+      padding-bottom: 23px;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 23px;
+      line-height: 31px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.025em;
+      color: #000000;
+      height: 82px;}
+
+.button-guarant-container{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-top: 50px;
+      width: 267.5px;
+      height: 55px;}
+
+.button__guarant {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      /* Начальные стили (черная кнопка с белым текстом) */
+      color: #ffffff;
+      background-color: #000000;
+      border: 1px solid #000000;
+      border-radius: 43px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;}
+      
+/* Стили при наведении (белая кнопка с черным текстом) */
+.button__guarant:hover {
+      background-color: #ffffff;
+      color: #000000;
+      border: 1px solid #000000;}
+
+.guarant__text{
+      width: 100%;
+      padding-left: 50px;
+      margin-top: 160px;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 20px;
+      letter-spacing: 0.085em;
+      color: #000000;}
+      
+/* второй обзац закончен */
+
+.basic__services{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      align-items: center;
+      margin: 0 178px;
+      margin-top: 239px;
+      width: auto;
+      height: 785px;
+      text-align: center;}
+
+.basic__header h3{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      width: 420px;
+      height: 63px;
+      margin-bottom: 130px;}
+
+.services__card-wraps{
+      display: flex;
+      position: relative;
+      width: auto;
+      align-items: center;
+      justify-content: center;
+      gap: 5rem;
+      height: 592px;}
+
+.services__card-wrap{
+      display: flex;
+      flex-direction: column;
+      width: 340px;
+      height: 552px;
+      border: 1px solid none;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень */
+      border-radius: 27px;
+      position: relative;}
+
+.services__card-wrap:hover {
+      transform: perspective(500px) rotateX(1deg) rotateY(30deg);
+      box-shadow: 0 15px 60px rgba(0, 0, 0, 0.3); /* усиленная тень для объема */
+}
+
+/* Разработка мобильных приложений */
+.card__title{
+      margin-top:auto;
+      margin-left: 52px;
+      margin-bottom: 40px;
+      width: 276px;
+      height: 59.27px;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 28px;
+      display: flex;
+      text-align:left;
+      text-transform: uppercase;
+      color: #000000;
+      opacity: 0.5;}
+
+/* Мы создаем мобильные приложения, которые нравятся пользователям. Воспользовавшись преимуществами искусственного интеллекта, машинного обучения, Интернета вещей и других высокотехнологичных технологий для создания шедевров приложений, которые сохранятся. */
+.card__text{
+margin-left: 52px;
+margin-top: 30px;
+width: 243px;
+height: 199.46px;
+text-align: start;
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 21px;
+display: flex;
+letter-spacing: -0.015em;
+color: #000000;
+}
+/* узнать больше */
+
+/* стиль для контейнера "больше информации" */
+.more__info{
+      display: grid;
+      margin: auto;
+      column-gap: 10px;
+      align-items: center;
+      grid-template-columns: 1fr 124px 1fr;
+      width: 244px;     
+      height: auto;
+      align-content: start;
+      justify-content: start;
+      background: none;
+}
+.more__info:hover * {
+    color: #000 !important; /* !important гарантирует переопределение других стилей */
+    stroke: #000 !important; /* Для SVG-элементов (стрелки и иконки) */
+    fill: #000 !important; /* Для SVG-элементов (иконки) */
+      cursor: pointer; /* добавляем указатель при наведении */}
+
+/* стиль для картинки */
+.more__info-image{
+      align-content: center;
+      width: 53px;
+      height: 53px;}
+
+/* стиль для текса в "больше информации" */
+
+.more__info-text{
+      width: max-content;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 22px;
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.05em;
+      color: #29A28C;
+}
+/* стиль для стрелки в "больше информации" */
+
+@keyframes bounce-horizontal {
+0%, 20%, 50%, 80%, 100% {transform: translateX(0);}
+40% {transform: translateX(10px);}
+60% {transform: translateX(15px);}}
+
+.more__info-arrow{
+animation: bounce-horizontal 3s infinite;}
+
+.card__logo {
+      position: absolute; 
+      top: -1.5%;
+      left: 77.7%; 
+      transform: translateX(-50%); 
+      z-index: 1; 
+}
+
+.card__logo-image{
+      position: absolute; /* Вложенное изображение позиционируется относительно card__logo */
+      top: 45px; 
+      left: 85%; 
+      transform: translate(-50%, -50%); 
+      width: 53px;
+      height: 53px;
+      z-index: 1;
+}
+
+/* Для контейнера "Наши проекты" */
+.our__projects-header{
+      padding-top: 123px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 150px;}
+
+.our__porject{
+      width: 1256px;
+      margin: auto;}
+
+/* Стиль для контейнера "Наши проекты" */
+
+.our__projects-container{
+display: grid;
+justify-content: center;
+grid-template-columns:  40px 1fr 1fr 1fr 1fr 40px; 
+column-gap: 20px;
+grid-row: 4;
+justify-content: center;
+justify-items: center;
+align-items:center;
+margin: auto;
+width: 1256px;
+height: 572px;}
+
+.our__projects-image{
+      grid-column:2;
+      grid-row: 1/span 3;}
+
+.our__arrow-left{
+      grid-column: 1;
+      grid-row: 1/span 4;
+      justify-self: center;
+      justify-items: center;
+      cursor: pointer;}
+
+.our__arrow-right {
+      grid-column: 6;
+      grid-row: 1/span 4;
+      justify-self: center;
+      cursor: pointer;
+      }
+
+.our__projects-text-head{
+      position: relative;
+      grid-column: 3/span 4;
+      grid-row: 1;
+      width: 639px; /* или другая подходящая ширина */
+      word-wrap: break-word; /* перенос слов, если не помещаются */
+      justify-self: start;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 49px;
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+      color: #000000;
+      margin: 0;}
+
+.our__projects-text{
+      font-family: 'Open Sans';
+      grid-column: 3/ span 3;
+      grid-row: 2;
+      justify-self: unset;
+      justify-content: center;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      align-items: center;
+      letter-spacing: 0.01em;
+      color: #000000;}
+
+      .our__ptojects-button-more-info{
+      position: relative;
+      grid-column: 3/span 4;
+      grid-row: 3;
+      justify-self:start;
+      gap: 40px;
+      display: flex;
+      height: 38px;
+      width: 336px;
+      text-transform: uppercase;
+      align-items: center;
+      background: none;
+      cursor: pointer;}
+
+      .our__ptojects-button-more-info:hover{
+      color: #29A28C !important; /* !important гарантирует переопределение других стилей */
+      stroke: #29A28C !important; /* Для SVG-элементов (стрелки и иконки) */
+      fill: #29A28C !important; /* Для SVG-элементов (иконки) */
+      cursor: pointer; /* добавляем указатель при наведении */}
+
+      .arrow-path {
+      stroke: currentColor; /* Будет наследовать цвет от родителя */
+}
+
+.our__ptojects-button-more-info:hover {
+      color: #29A28C;}
+
+.our__porjects-button-check-projects{
+position: relative;
+grid-column: 2/ span 4;
+justify-self: center;
+margin-top: 40px; /* Добавьте отступ сверху, если нужно опустить ещё больше */
+
+grid-row: 4;
+width: 300px;
+height: 50px;
+border-radius: 43px;
+color: #ffffff;
+background-color: #000000;
+border: 1px solid #000000;
+border-radius: 43px;
+cursor: pointer;
+transition: all 0.3s ease;}
+
+.our__porjects-button-check-projects:hover{
+background-color: #ffffff;
+color: #000000;
+border: 1px solid #000000;}
+
+
+
+/* Раздел Наши проекты
+завершен */
+
+.our-working-process-header{
+      position: relative;
+      text-align: center;
+      padding-top: 150px;
+      padding-bottom: 150px;
+}
+
+/* Наш процесс работы начало раздела */
+.our__working-process {
+      display: grid;
+      height: 449px;
+      column-gap: 50px;
+      align-items: stretch;
+      justify-content: center;
+}
+.our__working-process-button{
+      grid-column: 1;
+      gap: 21px;
+      position: relative;
+      display: grid;}
+
+
+      .our__working-process-button-body{
+      border: 2px solid black;
+      width:93px;
+      height:56px;
+}
+.our__working-process-button-body:hover{
+      color:#fff;
+      background: #aaa;
+      cursor: pointer; /* добавляем указатель при наведении */
+
+
+}
+.our__working-process-image{
+      grid-column: 2;
+}
+.our__working-process-head{
+      grid-column: 3;
+      grid-row: 1;
+      width: 520px;
+      height: 49px;
+      font-family: 'Open Sans';
+      font-style: normal;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 49px;
+      letter-spacing: 0.045em;
+      color: #000000;
+      text-align: center;
+      align-self: start;}
+
+.our__working-process-text{
+grid-column: 3;
+grid-row: 1;
+width: 548px;
+height: 291px;
+align-self: center;
+}
+.our__working-button-more-info{
+      display: flex;
+      grid-column: 3;
+      justify-content: space-around;
+      grid-row: 1;
+      align-self: end;
+      height: 38px;
+      width: 336px;
+      text-transform: uppercase;
+      align-items: center;
+      background: none;}
+
+      .our__working-button-more-info:hover
+      {      color: #29A28C !important; /* !important гарантирует переопределение других стилей */
+      stroke: #29A28C !important; /* Для SVG-элементов (стрелки и иконки) */
+      fill: #29A28C !important; /* Для SVG-элементов (иконки) */
+      cursor: pointer; /* добавляем указатель при наведении */}
+
+/* Раздел tools and technologis*/
+
+      .tools__tech{
+            display: flex;
+            flex-direction: column;
+            gap: 150px;
+            position: relative;
+            padding-top:150px;
+            align-items: center;
+            justify-content: center;
+      }
+      .tools__tech-body{
+            margin: auto;
+            width: auto;
+            display: grid;
+            column-gap: 50px;
+            grid-template-columns: repeat(8, 2fr);
+            grid-template-rows: 1fr 1fr;}
+      /* end */
+      /* start */
+      .quastions{
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+            width: 1600px;
+            padding-top:150px;
+            padding-bottom: 150px;
+            align-items: center;
+            justify-content: center;}
+      .quastions__body-left{
+            display: grid;
+            margin: auto;
+            width: 100%;
+            height: 548px;
+            row-gap: 10%;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 2fr);
+            background-color: #027B6620;}
+      
+      .quastions__photo{
+      padding-top: 50px;
+      display: grid;
+      grid-column: 1;
+      grid-row: 1;
+      justify-content: center;
+      align-items: center;
+      }
+      .people__job-title{
+      grid-column: 1;
+      grid-row: 2;
+      justify-content: center;
+      align-items: center;
+      text-align: center;}
+
+      .people__name{
+      grid-row: 1;
+      text-transform: uppercase;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 182.68%;
+      /* identical to box height, or 37px */
+      align-items: center;
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+      justify-content: center;}
+
+      .job__title{
+      grid-row: 2;
+      justify-content: center;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 25px;
+      /* identical to box height */
+      letter-spacing: 0.025em;}
+
+      .about__work{
+            padding-top: 15px;
+            grid-row: 3;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            width: 419px;
+            margin: auto;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 22px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 0.025em;
+            color: #515151;}
+
+      .raiting__stars{
+            margin: auto;
+            grid-row: 3;
+            align-items: center;
+            justify-content: center;
+            align-items: center;}
+
+      .raiting__data{
+            grid-row: 3;
+            margin: auto;
+            justify-self: start;
+            align-items: center;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 22px;
+            /* identical to box height */
+            display: flex;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 0.025em;
+            color: #6C6C6C;}
+
+      .quastions__body-right{
+            display: grid;
+            margin: auto;
+            width: 100%;
+            height: 548px;
+            row-gap: 1%;
+            grid-column: 2;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            grid-row: 1;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 2fr);
+            background: linear-gradient(to bottom left, #25BA9F , #1B7F6D 50%, #157161 73%, #09463B 98%);}
+
+      .quastions__user{
+            grid-template-columns: 1fr;
+            grid-column: 1;
+            grid-row: 1;
+            padding-top: 50px;
+            justify-items: center;
+            align-items: center;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 36px;
+            line-height: 49px;
+            /* identical to box height */
+            align-items: center;
+            text-align: center;
+            letter-spacing: 0.045em;
+            text-transform: uppercase;
+            color: #FFFFFF;}
+
+      .user-name{
+            padding-left: 15px;
+            padding-bottom: 10px;
+            width: 648px;
+            background: none;
+            border-bottom: 1px solid #fff;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 25px;
+            /* identical to box height */
+            letter-spacing: 0.025em;
+            color: rgba(255, 255, 255, 0.46);}
+
+      ::placeholder{
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 25px;
+            /* identical to box height */
+            letter-spacing: 0.025em;
+            color: rgba(255, 255, 255, 0.46);}
+
+      .contact__user{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-row: 3;
+            justify-items: center;
+            width: 648px;
+            column-gap: 10%;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 25px;
+            /* identical to box height */
+            letter-spacing: 0.025em;
+            color: rgba(255, 255, 255, 0.46);}
+
+.user-mail{
+            padding-left: 15px;
+            padding-bottom: 10px;
+            width: 289px;
+            background: none;
+            border-bottom: 1px solid #fff;
+            grid-row: 1;
+            justify-items: start;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 25px;
+            /* identical to box height */
+            letter-spacing: 0.025em;
+            color: rgba(255, 255, 255, 0.46);}
+
+.user-number{
+      padding-left: 15px;
+      padding-bottom: 10px;
+      grid-row: 1;
+      width: 289px;
+      border-bottom: 1px solid #fff;
+      background: none;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 25px;
+      /* identical to box height */
+      letter-spacing: 0.025em;
+      color: rgba(255, 255, 255, 0.46);}
+
+.user__message-container{
+            display: grid;
+            grid-column: 1;
+            grid-row: 4;
+            position: relative;
+            width: auto;
+            margin: auto;
+            padding-bottom: 30px;
+            justify-items: flex-end;}
+
+.user-message{
+            padding-left: 15px;
+            padding-top: 15px;
+            grid-row: 1/span 2;
+            width: 648px;
+            background: none;
+            border: 1px solid #fff;
+            height: 158px;
+            padding: 15px 50px 15px 15px; /* Правое поле увеличено для иконок */
+            border-radius: 15px;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 25px;
+            /* identical to box height */
+            letter-spacing: 0.025em;
+            color: rgba(255, 255, 255, 0.46);
+      }
+
+.custom-placeholder {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            pointer-events: none; /* Клики проходят сквозь плейсхолдер */
+            color: #aaa;
+            line-height: 1.5;
+}
+
+/* Стили для первой строки */
+.first-line {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 25px;
+/* identical to box height */
+letter-spacing: 0.025em;
+color: rgba(255, 255, 255, 0.46);
+}
+
+/* Стили для второй строки */
+.second-line {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 22px;
+      /* identical to box height */
+      letter-spacing: 0.025em;
+      color: rgba(255, 255, 255, 0.46);
+}
+
+/* Скрываем плейсхолдер при фокусе или вводе текста */
+.user-message:not(:placeholder-shown) + .custom-placeholder {
+      display: none;}
+
+      .image__message{
+            position: absolute;
+            padding-top: 25px;
+            padding-right: 25px;
+            column-gap: 15%;
+            display: grid;
+            grid-column: 1;
+            grid-row: 2/span 1;
+            
+      }
+      .image__message-telegramm{
+                        grid-column: 1;
+
+      }
+      .image__message-clip{
+                        grid-column: 2;}
+      /* Начало последнего раздела "футер" */
+
+      footer{
+            margin: auto;
+            width: 1600px;
+            height: 355px;
+            display: grid;
+            align-items: end;
+            justify-items: end;
+            justify-content: center;
+            grid-template-columns: 329px 243px 123px 132px 132px;
+            grid-template-rows: repeat(3, 50px);
+            column-gap:160px;
+            border-bottom: 1px solid #BDBDBD;
+      }
+      .end-logo-container{
+            justify-content: center;
+            justify-items: start;
+            column-gap: 15px;
+            display: flex;
+            align-items: center;}
+
+      .logo-text-end{
+      grid-row: 1;
+      grid-column: 1;
+      display: flex;
+      align-items: center;
+      position: relative;
+      align-items: center;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 27px;
+      color: #000000;
+      text-wrap: nowrap;
+      font-weight: bolder;
+      text-transform: uppercase;}
+
+.adress-end{ 
+      position: relative;
+      align-items: end;
+      width: 100%;
+      justify-content: flex-end;
+      display: grid;
+      grid-row: 2;
+      align-items: end;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 171.18%;
+      /* or 31px */
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #000000;}
+
+      .end-telephone{
+            display: grid;
+            grid-template-rows:1fr 1fr;
+            grid-template-columns: 50px ;
+            grid-row: 1;
+            grid-column: 2;
+            justify-content: start;
+            justify-items: start;
+            align-items: center;
+            width: 100%;
+      }
+.end-telephone-icon{
+            grid-column: 1;
+            grid-row: 1/span 2;
+}
+.end-number-1{
+      grid-column: 4;
+      grid-row: 1;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 171.18%;
+      /* or 31px */
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.065em;
+      text-transform: uppercase;
+      color: #000000;}
+
+.end-number-2{
+      grid-column: 4;
+      grid-row: 2;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 171.18%;
+      /* or 31px */
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.065em;
+      text-transform: uppercase;
+      color: #000000;}
+
+.end-email{
+      width: 100%;
+      justify-items: start;
+      display: grid;
+      grid-column: 2;
+      grid-template-columns: 40px 1fr;
+      column-gap:px;
+      align-items: center;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 171.18%;
+      /* or 31px */
+      letter-spacing: 0.065em;
+      text-transform: uppercase;
+      color:var(--colo-body);}
+
+.end-social{
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      justify-items: start;
+      grid-column: 2;
+      gap: 10%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;}
+
+.end-social-telegramm{
+      display: grid;
+      grid-template-columns: 35px 50px;
+      align-items: center;
+      gap: 10%;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 171.18%;
+      /* identical to box height, or 22px */
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.015em;
+      text-transform: uppercase;
+      color: var(--colo-body);}
+
+.end-social-whathsapp{    display: grid;
+      grid-template-columns: 35px 50px;
+      gap: 10%;      
+      align-items: center;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 171.18%;
+      letter-spacing: 0.015em;
+      text-transform: uppercase;
+      color: var(--colo-body);}
+
+.end-links-1{
+      grid-column: 3;
+      row-gap: 30px;
+      align-items: center;
+      justify-content: center;
+      grid-row: 1/span 3;
+      display: grid;
+      grid-template-rows: 1 fr 1fr 1fr;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 184.68%;
+      /* or 33px */
+      letter-spacing: 0.07em;
+      color: #000000;}
+
+.end-links-2{
+      grid-column: 4;
+      row-gap: 30px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+      grid-row: 1/span 3;
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 184.68%;
+      /* or 33px */
+      align-items: center;
+      letter-spacing: 0.07em;
+      color: #000000;
+}
+
+
+.arrow{
+      grid-column: 5;
+      grid-row: 1/span 2;
+      justify-items: center;
+      justify-self: center;
+      animation: bounce 2s infinite;}
+
+
+.arrow>a:hover svg path{      
+      stroke: #29A28C !important; /* Для SVG-элементов (стрелки и иконки) */
+      cursor: pointer; /* добавляем указатель при наведении */}
+
+
+.footer-bottom p {
+      display: flex;
+      justify-content: end;
+      line-height: 160%;
+      letter-spacing: -0.01em;
+      color: #bdbdbd;
+      font-size: 0.9375rem;
+      margin-bottom: 3.5625rem;
+      margin-right: 20rem;}
+
+      .link-end{
+      color:var(--colo-body);
+      cursor: pointer; /* добавляем указатель при наведении */}
+
+
+      .link-end:hover{
+      color:#29A28C;}
