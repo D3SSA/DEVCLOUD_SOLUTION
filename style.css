@@ -1064,13 +1064,12 @@ color: rgba(255, 255, 255, 0.46);
             align-items: end;
             justify-items: end;
             justify-content: center;
-            grid-template-columns: 329px 243px 123px 132px 132px;
+            grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: repeat(3, 50px);
             column-gap:160px;
             border-bottom: 1px solid #BDBDBD;
       }
-      .end{
-            max-width:1600;}
+     
       .end-logo-container{
             justify-content: center;
             justify-items: start;
