@@ -1058,7 +1058,7 @@ color: rgba(255, 255, 255, 0.46);
 
       footer{
             margin: auto;
-            width: 1600px;
+            max-width: 1600px;
             height: 355px;
             display: grid;
             align-items: end;
@@ -1069,6 +1069,8 @@ color: rgba(255, 255, 255, 0.46);
             column-gap:160px;
             border-bottom: 1px solid #BDBDBD;
       }
+      .end{
+            max-width:1600;}
       .end-logo-container{
             justify-content: center;
             justify-items: start;
